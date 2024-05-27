@@ -179,7 +179,7 @@ in web/src/components/Post/EditPostCell.tsx, web/src/components/Post/PostCell/Po
         createdAt
       }
     }
-`
+  `
 ```
 
 ```typescript
@@ -195,7 +195,7 @@ in web/src/components/Post/EditPostCell.tsx, web/src/components/Post/PostCell/Po
         createdAt
       }
     }
-`
+  `
 ```
 
 ```typescript
@@ -208,7 +208,7 @@ in web/src/components/Post/EditPostCell.tsx, web/src/components/Post/PostCell/Po
         createdAt
       }
     }
-`
+  `
 ```
 
 12.
@@ -269,16 +269,16 @@ Update the docker-compose.prod.yml file.
         - API_PROXY_TARGET=http://api:8911
 
 ~    init:
-~      build:
-~        context: .
-~        dockerfile: ./Dockerfile
-~        target: console
+       build:
+         context: .
+         dockerfile: ./Dockerfile
+         target: console
 ~      command: >
 ~        sh -c "yarn redwood prisma migrate deploy"
-~      depends_on:
-~        - db
-~      environment:
-~        - DATABASE_URL=postgresql://redwood:redwood@db:5432/redwood
+       depends_on:
+         - db
+       environment:
+         - DATABASE_URL=postgresql://redwood:redwood@db:5432/redwood
 
     db:
       image: postgres:16-bookworm
