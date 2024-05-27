@@ -295,3 +295,32 @@ Start the docker containers
 ```bash
 docker compose -f ./docker-compose.prod.yml up
 ```
+
+
+## System Info
+
+```bash
+System:
+    OS: Linux 5.15 Ubuntu 22.04.3 LTS 22.04.3 LTS (Jammy Jellyfish)
+    Shell: 5.8.1 - /usr/bin/zsh
+  Binaries:
+    Node: 20.10.0 - /tmp/xfs-8c357f40/node
+    Yarn: 4.2.2 - /tmp/xfs-8c357f40/yarn
+  npmPackages:
+    @redwoodjs/core: 7.6.2 => 7.6.2
+    @redwoodjs/project-config: 7.6.2 => 7.6.2
+  redwood.toml:
+    [web]
+      title = "Redwood App"
+      port = 8910
+      apiUrl = "/.redwood/functions"
+      includeEnvironmentVariables = []
+    [api]
+      port = 8911
+    [browser]
+      open = false
+    [notifications]
+      versionUpdates = ["latest"]
+    [experimental.dockerfile]
+        enabled = true
+```
