@@ -130,29 +130,29 @@ Update the api/src/services/posts/post.ts file.
 ~ export const createPost: MutationResolvers<RealtimeContext>['createPost'] =
 ~   async ({ input }, request) => {
 ~     const created = await db.post.create({
-~       data: input,
-~     })
+        data: input,
+      })
 +     invalidatePosts(request.context)
-~     return created
++     return created
     }
 
 ~ export const updatePost: MutationResolvers<RealtimeContext>['updatePost'] =
 ~   async ({ id, input }, request) => {
 ~     const updated = await db.post.update({
-~       data: input,
-~       where: { id },
-~     })
+        data: input,
+        where: { id },
+      })
 +     invalidatePost(id, request.context)
-~     return updated
++     return updated
     }
 
 ~  export const deletePost: MutationResolvers<RealtimeContext>['deletePost'] =
 ~    async ({ id }, request) => {
 ~      const deleted = await db.post.delete({
-~        where: { id },
-~      })
+         where: { id },
+       })
 +      invalidatePosts(request.context)
-~      return deleted
++      return deleted
      }
 
 + const invalidatePost = (id: number, context: RealtimeContext) => {
