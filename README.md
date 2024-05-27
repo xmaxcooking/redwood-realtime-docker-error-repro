@@ -134,7 +134,7 @@ Update the api/src/services/posts/post.ts file.
 ~     })
 +     invalidatePosts(request.context)
 ~     return created
-~   }
+    }
 
 ~ export const updatePost: MutationResolvers<RealtimeContext>['updatePost'] =
 ~   async ({ id, input }, request) => {
@@ -144,7 +144,7 @@ Update the api/src/services/posts/post.ts file.
 ~     })
 +     invalidatePost(id, request.context)
 ~     return updated
-~   }
+    }
 
 ~  export const deletePost: MutationResolvers<RealtimeContext>['deletePost'] =
 ~    async ({ id }, request) => {
@@ -153,7 +153,7 @@ Update the api/src/services/posts/post.ts file.
 ~      })
 +      invalidatePosts(request.context)
 ~      return deleted
-~    }
+     }
 
 + const invalidatePost = (id: number, context: RealtimeContext) => {
 +   if (!context) return
