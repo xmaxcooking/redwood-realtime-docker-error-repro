@@ -156,12 +156,10 @@ Update the api/src/services/posts/post.ts file.
      }
 
 + const invalidatePost = (id: number, context: RealtimeContext) => {
-+   if (!context) return
 +   context?.liveQueryStore?.invalidate([`Post:${id}`, `Query.post(id:${id})`])
 + }
 +
 + const invalidatePosts = (context: RealtimeContext) => {
-+   if (!context) return
 +   context?.liveQueryStore?.invalidate(['Query.posts'])
 + }
 ```
