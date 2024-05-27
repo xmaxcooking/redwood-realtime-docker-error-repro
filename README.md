@@ -111,7 +111,7 @@ Update web/src/Routes.tsx to simplify route path.
 10.
 Update the api/src/services/posts/post.ts file.
 
-  ```api/src/services/posts/posts.ts
+```api/src/services/posts/posts.ts
   import type { QueryResolvers, MutationResolvers } from 'types/graphql'
 
   import { db } from 'src/lib/db'
