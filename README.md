@@ -1,5 +1,9 @@
 # Realtime Docker Error - Reproduction
 
+Related to: https://community.redwoodjs.com/t/unknown-directive-live-in-docker/7150/2
+
+#
+
 1.
 ```bash
 yarn create redwood-app redwood-realtime-docker --typescript
