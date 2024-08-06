@@ -94,7 +94,7 @@ COPY --chown=node:node --from=api_build /home/node/app/node_modules/.prisma /hom
 
 ENV NODE_ENV=production
 
-CMD [ "node_modules/.bin/rw-server", "api" ]
+CMD [ "./api/dist/server.js" ]
 
 # web serve
 # ---------
